@@ -114,7 +114,12 @@ header {
     padding: 65px 20px 40px;
     z-index: 100;
     overflow: auto;
+    transition: 0.5s;
     box-shadow: -2px 0 1px rgba(0,0,0,0.1);
+}
+
+.cart.active {
+    right: 0;
 }
 
 .cart-title {
