@@ -24,6 +24,15 @@ function addToCart(productBox) {
     const productTitle = productBox.querySelector(".product-title").textContent;
     const productPrice = productBox.querySelector(".price").textContent;
 
+    const cartItems = cartContent.querySelectorAll(".cart-product-title");
+    for (let item of cartItems) {
+        if (item.textContent === productTitle) {
+            alert("Item already added to shopping cart");
+            return;
+        };
+    };
+    
+
     const cartBox = document.createElement("div");
     cartBox.classList.add("cart-box");
     cartBox.innerHTML = `
@@ -36,7 +45,7 @@ function addToCart(productBox) {
 
                     <div class="cart-quantity">
                         <button id="decrement">-</button>
-                        <span class="number">0</span>
+                        <span class="number">1</span>
                         <button id="increment">+</button>
                     </div>
                     
@@ -46,4 +55,10 @@ function addToCart(productBox) {
     `;
 
     cartContent.appendChild(cartBox);
+
+// ONCE TRASH BIN ICON IS PRESSED, ITEM REMOVED FROM CART
+    cartBox.querySelector(".cart-remove").addEventListener("click", () => {
+        cartBox.remove();
+    })
 }
+
