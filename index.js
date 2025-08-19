@@ -60,6 +60,7 @@ function addToCart(productBox) {
     cartBox.querySelector(".cart-remove").addEventListener("click", () => {
         cartBox.remove();
 
+        updateCartCount(-1);
         updateTotalPrice();
     });
 
@@ -86,6 +87,7 @@ function addToCart(productBox) {
     });
 
 
+    updateCartCount(1);
     updateTotalPrice();
 };
 
@@ -103,4 +105,19 @@ const updateTotalPrice = () => {
     });
 
     totalPriceElement.textContent = `$${total}`;
+};
+
+// ADD ORANGE BADGE ONCE ITEMS ARE ADDED TO CART
+let cartItemCount = 0;
+const updateCartCount = change => {
+    const cartItemCountBadge = document.querySelector(".cart-item-count");
+    cartItemCount += change;
+
+    if (cartItemCount > 0) {
+        cartItemCountBadge.style.visibility = "visible";
+        cartItemCountBadge.textContent = cartItemCount;
+    } else {
+        cartItemCountBadge.style.visibility = "hidden";
+        cartItemCountBadge.textContent = "";
+    }
 }
