@@ -59,6 +59,8 @@ function addToCart(productBox) {
 // ONCE TRASH BIN ICON IS PRESSED, ITEM REMOVED FROM CART
     cartBox.querySelector(".cart-remove").addEventListener("click", () => {
         cartBox.remove();
+
+        updateTotalPrice();
     });
 
 
@@ -79,6 +81,26 @@ function addToCart(productBox) {
         }
 
         numberElement.textContent = quantity;
+
+        updateTotalPrice();
     });
+
+
+    updateTotalPrice();
 };
 
+const updateTotalPrice = () => {
+    const totalPriceElement = document.querySelector(".total-price");
+    const cartBoxes = cartContent.querySelectorAll(".cart-box");
+    let total = 0;
+
+    cartBoxes.forEach(cartBox => {
+        const priceElement = cartBox.querySelector(".cart-price");
+        const quantityElement = cartBox.querySelector(".number");
+        const price = priceElement.textContent.replace("$", "");
+        const quantity = quantityElement.textContent;
+        total += price * quantity;
+    });
+
+    totalPriceElement.textContent = `$${total}`;
+}
