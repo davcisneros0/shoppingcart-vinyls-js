@@ -3,20 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Someone's Closet</title>
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
     <header>
-        <a href="#" class="logo">Someone's Closet</a>
+        <a href="index.html" class="logo">Someone's Closet</a>
         <div id="cart-icon">
             <i class="fa-solid fa-cart-shopping"></i>
             <span class="cart-item-count"></span>
         </div>
     </header>
 
+
+    <!-- CART / CART SIDE MENU -->
     <div class="cart"> 
         <h2 class="cart-title">Your Cart</h2>
 
@@ -52,9 +54,10 @@
         <button class="btn-buy">Buy Now</button>
         <i class="fa-solid fa-xmark" id="cart-close"></i>
     </div>
+    <!-- CART / CART SIDE MENU -->
 
 
-    <section class="shop">
+    <!-- <section class="shop">
         <h1 class="section-title">Shop Products</h1>
 
         <div class="product-content">
@@ -75,10 +78,10 @@
 
                <div class="product-box">
                 <div class="img-box">
-                         <img src="images/vinyl1.jpeg" alt="#">
+                         <img src="images/vinyl1.webp" alt="#">
                 </div>
 
-                <h2 class="product-title">ON THE HOUSE</h2>
+                <h2 class="product-title">Move Your Body</h2>
                 <span class="product-title-little-text">Marshall Jefferson</span>
                 <div class="price-and-cart">
                     <span class="price">$55</span>
@@ -114,8 +117,14 @@
 
 
         </div>
+    </section> -->
+
+    <section class="product-collection">
+        <h1>New Arrivals</h1>
+        <div class="product-list"></div>
     </section>
 
+    <script src="products.js"></script>
     <script src="index.js"></script>
 </body>
 </html>

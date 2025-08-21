@@ -1,6 +1,35 @@
 const cartIcon = document.querySelector("#cart-icon"); 
 const cart = document.querySelector(".cart"); 
 const cartClose = document.querySelector("#cart-close"); 
+const productContainer = document.querySelector(".product-list");
+
+
+if (productContainer) {
+    displayProducts();
+}
+
+function displayProducts() {
+    products.forEach(product => {
+        const productCard = document.createElement("div");
+        productCard.classList.add("product-card");
+        productCard.innerHTML = `
+        <div class="img-box">
+            <img src="${product.image}">
+        </div>
+
+        <h2 class="title">${product.title}</h2>
+        <span class="price">${product.price}</span>
+        `;
+
+        productContainer.appendChild(productCard);
+
+        const imgBox = productCard.querySelector(".img-box");
+        imgBox.addEventListener("click", () => {
+            sessionStorage.setItem("selectedProduct", JSON.stringify(product));
+            window.location.href = "product-detail.html";
+        });
+    });
+};
 
 
 // MOVE CART MENU LEFT AND RIGHT
@@ -15,8 +44,6 @@ addToCartButtons.forEach(button => {
       addToCart(productBox);  
     });
 });
-
-
 
 // MAKE CART CONTENT BOX 
 const cartContent = document.querySelector(".cart-content");
@@ -93,6 +120,7 @@ function addToCart(productBox) {
     updateTotalPrice();
 };
 
+// WHEN CART IS INCREMENTED OR DECREMENTED, CHANGE PRICE
 const updateTotalPrice = () => {
     const totalPriceElement = document.querySelector(".total-price");
     const cartBoxes = cartContent.querySelectorAll(".cart-box");

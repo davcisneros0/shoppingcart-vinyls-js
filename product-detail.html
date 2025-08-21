@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Someone's Closet - Product Details</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">Someone's Closet</a>
+        <div id="cart-icon">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="cart-item-count"></span>
+        </div>
+    </header>
+
+
+    <!-- CART / CART SIDE MENU -->
+    <div class="cart"> 
+        <h2 class="cart-title">Your Cart</h2>
+
+        <div class="cart-content">
+
+            <!-- <div class="cart-box">
+
+                <img src="images/nervousrecords.jpg" class="cart-img">
+
+                <div class="cart-detail">
+
+                    <h2 class="cart-product-title">Vinyl 1</h2>
+                    <span class="cart-price">$30</span>
+
+                    <div class="cart-quantity">
+                        <button id="decrement">-</button>
+                        <span class="number">0</span>
+                        <button id="increment">+</button>
+                    </div>
+                    
+                </div>
+
+                <i class="fa-solid fa-trash cart-remove"></i>
+            
+            </div> -->
+        </div>
+
+        <div class="total">
+            <div class="total-title">Total</div>
+            <div class="total-price">$0</div>
+        </div>
+
+        <button class="btn-buy">Buy Now</button>
+        <i class="fa-solid fa-xmark" id="cart-close"></i>
+    </div>
+    <!-- CART / CART SIDE MENU -->
+
+
+    <div class="product-details">
+
+        <div class="product-img">
+            <div class="main-img">
+                <img src="images/nervousrecords.jpg" alt="">
+            </div>
+        </div>
+
+        <div class="product-info">
+            <h2 class="title">Guardate</h2>
+            <span class="price">$15</span>
+            <p class="description">Released by Nervous Records - House - 120 BPM"</p>
+        </div>
+
+        <button class="btn" id="add-cart-btn">Add to Cart</button>
+
+        <div class="product-policy">
+            <p>100% Original Product</p>
+            <p>No RETURNS</p>
+        </div>
+
+    </div>
+
+
+    
+    <script src="products.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
