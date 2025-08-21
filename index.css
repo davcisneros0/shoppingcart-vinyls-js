@@ -84,6 +84,10 @@ header {
     margin-top: 10px;
 }
 
+.product-title-little-text {
+    color: rgb(82, 82, 82);
+}
+
 .product-box .price-and-cart {
     display: flex;
     justify-content: space-between;

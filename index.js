@@ -2,6 +2,8 @@ const cartIcon = document.querySelector("#cart-icon");
 const cart = document.querySelector(".cart"); 
 const cartClose = document.querySelector("#cart-close"); 
 
+
+// MOVE CART MENU LEFT AND RIGHT
 cartIcon.addEventListener("click", () => cart.classList.add("active"));
 cartClose .addEventListener("click", () => cart.classList.remove("active"));
 
@@ -120,4 +122,5 @@ const updateCartCount = change => {
         cartItemCountBadge.style.visibility = "hidden";
         cartItemCountBadge.textContent = "";
     }
-}
+};
+
