@@ -102,8 +102,57 @@ header {
     margin-top: 8px;
 }
 
+.product-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    padding: 130px 10% 30px;
+}
 
+.product-details .product-img {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: 13px;
+    height: 550px;
+}
 
+.product-details .product-img .main-img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+}
+
+.product-details .title {
+    font-weight: 500;
+    line-height: 1;
+    margin-bottom: 7px;
+}
+
+.product-details .price {
+    display: block;
+    font-size: 24px;
+    font-weight: 600;
+    margin: 20px 0;
+}
+
+.btn {
+    padding: 12px 50px;
+    background: #222;
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.product-details .product-policy {
+    border-top: 1px solid #ccc;
+    padding-top: 8px;
+}
+
+.product-details .product-policy p {
+    margin: 3px 0;
+}
 
 
 
