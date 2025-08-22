@@ -2,10 +2,13 @@ const cartIcon = document.querySelector("#cart-icon");
 const cart = document.querySelector(".cart"); 
 const cartClose = document.querySelector("#cart-close"); 
 const productContainer = document.querySelector(".product-list");
+const isProductDetailPage = document.querySelector(".product-details");
 
 
 if (productContainer) {
     displayProducts();
+} else if (isProductDetailPage) {
+    displayProductDetails();
 }
 
 function displayProducts() {
@@ -30,6 +33,36 @@ function displayProducts() {
         });
     });
 };
+
+// DISPLAY DETAILS OF SELECTED PRODUCT
+function displayProductDetails() {
+    const productData = JSON.parse(sessionStorage.getItem("selectedProduct"));
+    console.log(productData);
+
+    const titleElement = document.querySelector(".title");
+    const priceElement = document.querySelector(".price");
+    const descriptionElement = document.querySelector(".description");
+    const mainImageElement = document.querySelector(".main-img");
+    const addToCartBtn = document.querySelector("#add-cart-btn");
+
+    mainImageElement.innerHTML = `<img src="${productData.image}">`;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // MOVE CART MENU LEFT AND RIGHT

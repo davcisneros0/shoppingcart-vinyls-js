@@ -116,7 +116,7 @@ header {
     height: 550px;
 }
 
-.product-details .product-img .main-img {
+.product-details .product-img .main-img img {
     display: block;
     width: 100%;
     object-fit: cover;
