@@ -3,12 +3,18 @@ const cart = document.querySelector(".cart");
 const cartClose = document.querySelector("#cart-close"); 
 const productContainer = document.querySelector(".product-list");
 const isProductDetailPage = document.querySelector(".product-details");
+const isCartPage = document.querySelector(".cart-page");
 
 
+// IF USER IS IN PRODUCTS PAGE, SHOW PRODUCTS
+// IF USER IS IN PRODUCT DETAILS PAGE, SHOW PRODUCT DETAILS
+// IF USER IS IN CART PAGE, SHOW CART PAGE
 if (productContainer) {
     displayProducts();
 } else if (isProductDetailPage) {
     displayProductDetails();
+} else if (isCartPage) {
+    displayCart();
 }
 
 function displayProducts() {
@@ -56,6 +62,56 @@ function displayProductDetails() {
 
 }
 
+
+// // DISPLAY SHOPPING CART WEBPAGE
+function displayCart() {
+    const cart = JSON.parse(sessionStorage.getItem("cart")) || [];
+
+    const cartItemsContainer = document.querySelector(".cart-items");
+    const subtotalElement = document.querySelector(".subtotal");
+    const grandTotalElement  = document.querySelector(".grand-total");
+
+    cartItemsContainer.innerHTML = "";
+
+    // IF NO PRODUCTS
+    if (cart.length === 0) {
+        cartItemsContainer.innerHTML = "<br><p>Your cart is empty.</p>";
+        subtotalElement.textContent = "$0";
+        grandTotalElement.textContent = "$0";
+        return
+    }
+
+    let subtotal = 0;
+
+    cart.forEach((item, index) => {
+        const itemTotal = parseFloat(item.price.replace("$", "")) * item.quantity;
+        subtotal += itemTotal;
+
+        const cartItem = document.createElement("div");
+        cartItem.classList.add("cart-item");
+        cartItem.innerHTML = `
+                <div class="product">
+                    <img src="${item.image}">
+                    <div class="item-detail">
+                        <p>${item.title}</p>
+                    </div>
+                </div>
+
+                <span class="price">${item.price}</span>
+                <div class="quantity"><input type="number" value="${item.quantity}" min="1" data-index="${index}"></div>
+                <span class="total-price">$${item.total}</span>
+                <button class="remove" data-index="${index}"><i class="fa-solid fa-square-xmark"></i></button>
+        `;
+
+        cartItemsContainer.appendChild(cartItem);
+    });
+
+    subtotalElement.textContent = `$${subtotal.toFixed(2)}`;
+    grandTotalElement.textContent = `$${subtotal.toFixed(2)}`;
+    
+    
+}
+
 function addToCart(product) {
     let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
 
@@ -95,20 +151,20 @@ function addToCart(product) {
 
 
 // MOVE CART MENU LEFT AND RIGHT
-cartIcon.addEventListener("click", () => cart.classList.add("active"));
-cartClose .addEventListener("click", () => cart.classList.remove("active"));
+// cartIcon.addEventListener("click", () => cart.classList.add("active"));
+// cartClose .addEventListener("click", () => cart.classList.remove("active"));
 
 // EVERY ADD TO CART BUTTON HAS A FUNCTIONALITY TO ADD TO SHOPPING CART
-const addToCartButtons = document.querySelectorAll(".add-cart");
-addToCartButtons.forEach(button => {
-    button.addEventListener("click", event => {
-      const productBox = event.target.closest(".product-box");
-      addToCart(productBox);  
-    });
-});
+// const addToCartButtons = document.querySelectorAll(".add-cart");
+// addToCartButtons.forEach(button => {
+//     button.addEventListener("click", event => {
+//       const productBox = event.target.closest(".product-box");
+//       addToCart(productBox);  
+//     });
+// });
 
 // MAKE CART CONTENT BOX 
-const cartContent = document.querySelector(".cart-content");
+// const cartContent = document.querySelector(".cart-content");
 
 // function addToCart(productBox) {
 //     const productImgSrc = productBox.querySelector("img").src;
@@ -183,34 +239,34 @@ const cartContent = document.querySelector(".cart-content");
 // };
 
 // WHEN CART IS INCREMENTED OR DECREMENTED, CHANGE PRICE
-const updateTotalPrice = () => {
-    const totalPriceElement = document.querySelector(".total-price");
-    const cartBoxes = cartContent.querySelectorAll(".cart-box");
-    let total = 0;
+// const updateTotalPrice = () => {
+//     const totalPriceElement = document.querySelector(".total-price");
+//     const cartBoxes = cartContent.querySelectorAll(".cart-box");
+//     let total = 0;
 
-    cartBoxes.forEach(cartBox => {
-        const priceElement = cartBox.querySelector(".cart-price");
-        const quantityElement = cartBox.querySelector(".number");
-        const price = priceElement.textContent.replace("$", "");
-        const quantity = quantityElement.textContent;
-        total += price * quantity;
-    });
+//     cartBoxes.forEach(cartBox => {
+//         const priceElement = cartBox.querySelector(".cart-price");
+//         const quantityElement = cartBox.querySelector(".number");
+//         const price = priceElement.textContent.replace("$", "");
+//         const quantity = quantityElement.textContent;
+//         total += price * quantity;
+//     });
 
-    totalPriceElement.textContent = `$${total}`;
-};
+//     totalPriceElement.textContent = `$${total}`;
+// };
 
 // ADD ORANGE BADGE ONCE ITEMS ARE ADDED TO CART
-let cartItemCount = 0;
-const updateCartCount = change => {
-    const cartItemCountBadge = document.querySelector(".cart-item-count");
-    cartItemCount += change;
+// let cartItemCount = 0;
+// const updateCartCount = change => {
+//     const cartItemCountBadge = document.querySelector(".cart-item-count");
+//     cartItemCount += change;
 
-    if (cartItemCount > 0) {
-        cartItemCountBadge.style.visibility = "visible";
-        cartItemCountBadge.textContent = cartItemCount;
-    } else {
-        cartItemCountBadge.style.visibility = "hidden";
-        cartItemCountBadge.textContent = "";
-    }
-};
+//     if (cartItemCount > 0) {
+//         cartItemCountBadge.style.visibility = "visible";
+//         cartItemCountBadge.textContent = cartItemCount;
+//     } else {
+//         cartItemCountBadge.style.visibility = "hidden";
+//         cartItemCountBadge.textContent = "";
+//     }
+// };
 
