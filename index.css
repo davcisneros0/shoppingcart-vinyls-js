@@ -30,14 +30,35 @@ header {
     font-weight: 500;
 }
 
-#cart-icon {
+nav .cart-icon {
     position: relative;
     display: flex;
     font-size: 25px;
     cursor: pointer;
+    color: black;
 }
 
-#cart-icon .cart-item-count {
+nav .cart-icon .cart-item-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    width: 15px;
+    height: 15px;
+    background: rgb(255, 146, 50);
+    border-radius: 50%;
+    font-size: 12px;
+    color: white;
+    display: none;
+}
+
+/* #cart-icon {
+    position: relative;
+    display: flex;
+    font-size: 25px;
+    cursor: pointer;
+} */
+
+/* #cart-icon .cart-item-count {
     position: absolute;
     top: -8px;
     right: -8px;
@@ -51,7 +72,7 @@ header {
     justify-content: center;
     align-items: center;
     visibility: hidden;
-}
+} */
 
 .product-collection {
     padding: 90px 9% 30px;
@@ -60,7 +81,7 @@ header {
 .product-collection h1 {
     font-size: 30px;
     text-align: center;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     font-weight: 700;
 }
 
@@ -70,14 +91,15 @@ header {
 
 .product-collection .product-list {
    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
+   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+   gap: 30px;
 }
 
 .product-collection .img-box {
-     display: flex;
+    display: flex;
     border-radius: 8px;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .img-box img {
@@ -91,7 +113,7 @@ header {
 }
 
 .product-collection .title {
-    font-weight: 500;
+    font-weight: 300;
     font-size: 18px;
     margin-top: 8px;
 }
@@ -110,10 +132,10 @@ header {
 }
 
 .product-details .product-img {
-    display: grid;
-    grid-template-columns: 1fr 4fr;
-    gap: 13px;
-    height: 550px;
+    /* display: grid;
+    grid-template-columns: 1fr; */
+    /* gap: 13px; */
+    height: 450px;
 }
 
 .product-details .product-img .main-img img {
@@ -126,7 +148,7 @@ header {
 .product-details .title {
     font-weight: 500;
     line-height: 1;
-    margin-bottom: 7px;
+    margin-bottom: 5px;
 }
 
 .product-details .price {
@@ -134,6 +156,11 @@ header {
     font-size: 24px;
     font-weight: 600;
     margin: 20px 0;
+}
+
+.product-details .description {
+    line-height: 1.8;
+    color: rgb(50, 50, 50);
 }
 
 .btn {
@@ -146,14 +173,14 @@ header {
     border-radius: 8px;
 }
 
-.product-details .product-policy {
+/* .product-details .product-policy {
     border-top: 1px solid #ccc;
     padding-top: 8px;
-}
+} */
 
-.product-details .product-policy p {
+/* .product-details .product-policy p {
     margin: 3px 0;
-}
+} */
 
 .cart-page {
     padding: 110px 9% 30px;
