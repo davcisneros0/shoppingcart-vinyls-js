@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    
+    <header>
+        <a href="index.html" class="logo">Someone's Closet</a>
+        <div id="cart-icon">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="cart-item-count"></span>
+        </div>
+    </header>
+
+    <!-- CART / CART SIDE MENU -->
+    <div class="cart"> 
+    
+        <div class="cart-content">
+
+
+
+            <!-- <div class="cart-box">
+
+                <img src="images/nervousrecords.jpg" class="cart-img">
+
+                <div class="cart-detail">
+
+                    <h2 class="cart-product-title">Vinyl 1</h2>
+                    <span class="cart-price">$30</span>
+
+                    <div class="cart-quantity">
+                        <button id="decrement">-</button>
+                        <span class="number">0</span>
+                        <button id="increment">+</button>
+                    </div>
+                    
+                </div>
+
+                <i class="fa-solid fa-trash cart-remove"></i>
+            
+            </div> -->
+        </div>
+
+        <div class="total">
+            <div class="total-title">Total</div>
+            <div class="total-price">$0</div>
+        </div>
+
+        <button class="btn-buy">Buy Now</button>
+        <i class="fa-solid fa-xmark" id="cart-close"></i>
+    </div>
+    <!-- CART / CART SIDE MENU -->
+
+
+    <div class="cart-page"> 
+
+      <div class="cart-header">
+            <span>Products</span>
+            <span>Price</span>
+            <span>Quantity</span>
+            <span>Total</span>
+            <span>Remove</span>
+       </div>
+
+       <div class="cart-items">
+            <div class="cart-item">
+                <div class="product">
+                    <img src="images/nervousrecords.jpg">
+                    <div class="item-detail">
+                        <p>Guardate</p>
+                    </div>
+                </div>
+                <span class="price">$15</span>
+                <div class="quantity"><input type="number" value="1" min="1"></div>
+                <span class="total-price">$15</span>
+                <button class="remove"><i class="fa-solid fa-square-xmark"></i></button>
+            </div>
+       </div>
+
+       <div class="cart-total">
+            <h3>Cart Total</h3>
+            <p>Subtotal <span class="subtotal">$0</span></p>
+            <p>Delivery Fee <span class="subtotal">$0</span></p>
+            <p>Grand Total <span class="subtotal">$0</span></p>
+            <button class="checkout-btn">Proceed to Checkout</button>
+       </div>
+
+    </div>
+
+     <script src="products.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>

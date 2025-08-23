@@ -46,8 +46,37 @@ function displayProductDetails() {
     const addToCartBtn = document.querySelector("#add-cart-btn");
 
     mainImageElement.innerHTML = `<img src="${productData.image}">`;
+    titleElement.textContent = productData.title;
+    priceElement.textContent = productData.price;
+    descriptionElement.textContent = productData.description;
 
+    addToCartBtn.addEventListener("click", () => {
+        addToCart(productData);
+    });
 
+}
+
+function addToCart(product) {
+    let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
+
+    const existingItem = cart.find(item => item.id === product.id);
+
+    if (existingItem) {
+        existingItem.quantity += 1;
+    } else {
+        cart.push(
+            {
+                id: product.id,
+                title: product.title,
+                price: product.price,
+                image: product.image,
+                quantity: 1
+            }
+        );
+    }
+
+    // SAVE UPDATED CART TO SESSIONSTORAGE
+    sessionStorage.setItem("cart". JSON.stringify(cart));
 }
 
 
@@ -81,77 +110,77 @@ addToCartButtons.forEach(button => {
 // MAKE CART CONTENT BOX 
 const cartContent = document.querySelector(".cart-content");
 
-function addToCart(productBox) {
-    const productImgSrc = productBox.querySelector("img").src;
-    const productTitle = productBox.querySelector(".product-title").textContent;
-    const productPrice = productBox.querySelector(".price").textContent;
+// function addToCart(productBox) {
+//     const productImgSrc = productBox.querySelector("img").src;
+//     const productTitle = productBox.querySelector(".product-title").textContent;
+//     const productPrice = productBox.querySelector(".price").textContent;
 
-    const cartItems = cartContent.querySelectorAll(".cart-product-title");
-    for (let item of cartItems) {
-        if (item.textContent === productTitle) {
-            alert("Item already added to shopping cart");
-            return;
-        };
-    };
+//     const cartItems = cartContent.querySelectorAll(".cart-product-title");
+//     for (let item of cartItems) {
+//         if (item.textContent === productTitle) {
+//             alert("Item already added to shopping cart");
+//             return;
+//         };
+//     };
     
 
-    const cartBox = document.createElement("div");
-    cartBox.classList.add("cart-box");
-    cartBox.innerHTML = `
-        <img src="${productImgSrc}" class="cart-img">
+//     const cartBox = document.createElement("div");
+//     cartBox.classList.add("cart-box");
+//     cartBox.innerHTML = `
+//         <img src="${productImgSrc}" class="cart-img">
 
-                <div class="cart-detail">
+//                 <div class="cart-detail">
 
-                    <h2 class="cart-product-title">${productTitle}</h2>
-                    <span class="cart-price">${productPrice}</span>
+//                     <h2 class="cart-product-title">${productTitle}</h2>
+//                     <span class="cart-price">${productPrice}</span>
 
-                    <div class="cart-quantity">
-                        <button id="decrement">-</button>
-                        <span class="number">1</span>
-                        <button id="increment">+</button>
-                    </div>
+//                     <div class="cart-quantity">
+//                         <button id="decrement">-</button>
+//                         <span class="number">1</span>
+//                         <button id="increment">+</button>
+//                     </div>
                     
-                </div>
+//                 </div>
 
-                <i class="fa-solid fa-trash cart-remove"></i>
-    `;
+//                 <i class="fa-solid fa-trash cart-remove"></i>
+//     `;
 
-    cartContent.appendChild(cartBox);
+//     cartContent.appendChild(cartBox);
 
-// ONCE TRASH BIN ICON IS PRESSED, ITEM REMOVED FROM CART
-    cartBox.querySelector(".cart-remove").addEventListener("click", () => {
-        cartBox.remove();
+// // ONCE TRASH BIN ICON IS PRESSED, ITEM REMOVED FROM CART
+//     cartBox.querySelector(".cart-remove").addEventListener("click", () => {
+//         cartBox.remove();
 
-        updateCartCount(-1);
-        updateTotalPrice();
-    });
-
-
-// INCREMENT AND DECREMENT BUTTONS
-    cartBox.querySelector(".cart-quantity").addEventListener("click", event => {
-        const numberElement = cartBox.querySelector(".number");
-        const decrementButton = cartBox.querySelector("#decrement");
-        let quantity = numberElement.textContent;
-
-        if (event.target.id == "decrement" && quantity > 1) {
-            quantity--;
-            if (quantity === 1) {
-                decrementButton.style.color = "#999";
-            }
-        } else if (event.target.id == "increment") {
-            quantity++;
-            decrementButton.style.color = "#333";
-        }
-
-        numberElement.textContent = quantity;
-
-        updateTotalPrice();
-    });
+//         updateCartCount(-1);
+//         updateTotalPrice();
+//     });
 
 
-    updateCartCount(1);
-    updateTotalPrice();
-};
+// // INCREMENT AND DECREMENT BUTTONS
+//     cartBox.querySelector(".cart-quantity").addEventListener("click", event => {
+//         const numberElement = cartBox.querySelector(".number");
+//         const decrementButton = cartBox.querySelector("#decrement");
+//         let quantity = numberElement.textContent;
+
+//         if (event.target.id == "decrement" && quantity > 1) {
+//             quantity--;
+//             if (quantity === 1) {
+//                 decrementButton.style.color = "#999";
+//             }
+//         } else if (event.target.id == "increment") {
+//             quantity++;
+//             decrementButton.style.color = "#333";
+//         }
+
+//         numberElement.textContent = quantity;
+
+//         updateTotalPrice();
+//     });
+
+
+//     updateCartCount(1);
+//     updateTotalPrice();
+// };
 
 // WHEN CART IS INCREMENTED OR DECREMENTED, CHANGE PRICE
 const updateTotalPrice = () => {
