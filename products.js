@@ -27,5 +27,6 @@ const products = [
         description: "Returning to Solid Grooves for his third venture on the label following 2023's solo outing 'Gem' and 2022's 'Uno Dos Tres' with Ben Sterling, he brings a fresh dose of inspiration with his latest single, 'En La Selva'. Teaming up with vocalist Mz Burn, 'En La Selva' is a production that exemplifies his low-slung and heady sound, featuring murky bass tones, crisp rolling drums, and bumping bass hits that work in harmony with the hooky vocals and spiralling synths",
         image: "images/bodeler.webp"
     },
+    // {}, {}, {}, {}
 
 ]
