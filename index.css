@@ -49,6 +49,7 @@ nav .cart-icon .cart-item-count {
     font-size: 12px;
     color: white;
     display: none;
+    transition: 0.8s;
 }
 
 
@@ -198,6 +199,7 @@ nav .cart-icon .cart-item-count {
 .cart-page .cart-header span {
     flex: 1;
     text-align: center;
+    background-color: red;
 }
 
 .cart-page .cart-header span:first-child {
@@ -225,7 +227,7 @@ nav .cart-icon .cart-item-count {
 
 .cart-page .cart-item :is(.price, .quantity, .total-price) {
     /* background-color: red; */
-    flex: 1.5;
+    flex: 1.4;
     text-align: center;
 }
 
@@ -453,8 +455,4 @@ nav .cart-icon .cart-item-count {
     right: 20px;
     font-size: 25px;
     cursor: pointer;
-}
-
-.remove {
-    color: blue;
 }
