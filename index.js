@@ -86,6 +86,7 @@ function addToCart(product) {
 
     // SAVE UPDATED CART TO SESSIONSTORAGE
     sessionStorage.setItem("cart", JSON.stringify(cart));
+    updateCartBadge();
 }
 
 
@@ -146,6 +147,7 @@ function removeCartItem() {
             cart.splice(index, 1);
             sessionStorage.setItem("cart", JSON.stringify(cart));
             displayCart();
+            updateCartBadge();
         });
     });
 }
@@ -158,9 +160,30 @@ function updateCartQuantity() {
             cart[index].quantity = parseInt(this.value);
             sessionStorage.setItem("cart", JSON.stringify(cart));
             displayCart();
+            updateCartBadge();
         });
     });
 }
+
+
+function updateCartBadge() {
+    const cart = JSON.parse(sessionStorage.getItem("cart")) || [];
+    const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
+    const badge = document.querySelector(".cart-item-count");
+
+    if (badge) {
+        if (cartCount > 0) {
+            badge.textContent = cartCount;
+            badge.style.display = "block";
+            badge.style.textAlign = "center";
+        } else {
+            badge.style.display = "none";
+        };
+    };
+}
+
+updateCartBadge();
+
 // // // ONCE TRASH BIN ICON IS PRESSED, ITEM REMOVED FROM CART
 //     cartBox.querySelector(".cart-remove").addEventListener("click", () => {
 //         cartBox.remove();
