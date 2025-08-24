@@ -89,7 +89,6 @@ function addToCart(product) {
 }
 
 
-
 // // DISPLAY SHOPPING CART WEBPAGE
 function displayCart() {
     const cart = JSON.parse(sessionStorage.getItem("cart")) || [];
@@ -135,15 +134,54 @@ function displayCart() {
 
     subtotalElement.textContent = `$${subtotal.toFixed(2)}`;
     grandTotalElement.textContent = `$${subtotal.toFixed(2)}`;
-    
-    
+    removeCartItem();
+    updateCartQuantity();
 }
+
+function removeCartItem() {
+    document.querySelectorAll(".remove").forEach(button => {
+        button.addEventListener("click", function() {
+            let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
+            const index = this.getAttribute("data-index");
+            cart.splice(index, 1);
+            sessionStorage.setItem("cart", JSON.stringify(cart));
+            displayCart();
+        });
+    });
+}
+
+function updateCartQuantity() {
+    document.querySelectorAll(".quantity input").forEach(input => {
+        input.addEventListener("change", function() {
+            let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
+            const index = this.getAttribute("data-index");
+            cart[index].quantity = parseInt(this.value);
+            sessionStorage.setItem("cart", JSON.stringify(cart));
+            displayCart();
+        });
+    });
+}
+// // // ONCE TRASH BIN ICON IS PRESSED, ITEM REMOVED FROM CART
+//     cartBox.querySelector(".cart-remove").addEventListener("click", () => {
+//         cartBox.remove();
+
+//         updateCartCount(-1);
+//         updateTotalPrice();
+//     });
+
+
+
+
+
+
+
+
 
 
 
 // MOVE CART MENU LEFT AND RIGHT
-cartIcon.addEventListener("click", () => cart.classList.add("active"));
-cartClose .addEventListener("click", () => cart.classList.remove("active"));
+// cartIcon.addEventListener("click", () => cart.classList.add("active"));
+// cartClose .addEventListener("click", () => cart.classList.remove("active"));
 
 // EVERY ADD TO CART BUTTON HAS A FUNCTIONALITY TO ADD TO SHOPPING CART
 // const addToCartButtons = document.querySelectorAll(".add-cart");
