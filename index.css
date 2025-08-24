@@ -230,7 +230,6 @@ nav .cart-icon .cart-item-count {
 
 .cart-page .cart-item .quantity input {
     width: 50px;
-    /* background-color: blue; */
     padding: 5px;
     border: 1px solid #ccc;
     text-align: center;
@@ -453,4 +452,8 @@ nav .cart-icon .cart-item-count {
     right: 20px;
     font-size: 25px;
     cursor: pointer;
+}
+
+.remove {
+    color: blue;
 }

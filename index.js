@@ -126,8 +126,8 @@ function displayCart() {
 
                 <span class="price">${item.price}</span>
                 <div class="quantity"><input type="number" value="${item.quantity}" min="1" data-index="${index}"></div>
-                <span class="total-price">$${item.total}</span>
-                <button class="remove" data-index="${index}"><i class="fa-solid fa-square-xmark"></i></button>
+                <span class="total-price">$${itemTotal}</span>
+                <button class="remove" data-index="${index}"><i class="fa-solid fa-xmark"></i></button>
         `;
 
         cartItemsContainer.appendChild(cartItem);
@@ -139,47 +139,11 @@ function displayCart() {
     
 }
 
-// function addToCart(product) {
-//     let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
-
-//     const existingItem = cart.find(item => item.id === product.id);
-
-//     if (existingItem) {
-//         existingItem.quantity += 1;
-//     } else {
-//         cart.push(
-//             {
-//                 id: product.id,
-//                 title: product.title,
-//                 price: product.price,
-//                 image: product.image,
-//                 quantity: 1
-//             }
-//         );
-//     }
-
-//     // SAVE UPDATED CART TO SESSIONSTORAGE
-//     sessionStorage.setItem("cart". JSON.stringify(cart));
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // MOVE CART MENU LEFT AND RIGHT
-// cartIcon.addEventListener("click", () => cart.classList.add("active"));
-// cartClose .addEventListener("click", () => cart.classList.remove("active"));
+cartIcon.addEventListener("click", () => cart.classList.add("active"));
+cartClose .addEventListener("click", () => cart.classList.remove("active"));
 
 // EVERY ADD TO CART BUTTON HAS A FUNCTIONALITY TO ADD TO SHOPPING CART
 // const addToCartButtons = document.querySelectorAll(".add-cart");
