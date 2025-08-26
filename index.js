@@ -176,6 +176,7 @@ function updateCartBadge() {
             badge.textContent = cartCount;
             badge.style.display = "block";
             badge.style.textAlign = "center";
+            badge.style.fontFamily = "sans-serif";
         } else {
             badge.style.display = "none";
         };

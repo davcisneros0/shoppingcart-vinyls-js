@@ -1,0 +1,15 @@
+@media only screen and (max-width: 1000px) {
+
+    .product-details {
+        /* background-color: blue; */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .product-details .product-img .main-img img {
+        width: 400px;
+        margin: 0 auto;
+    }
+}
