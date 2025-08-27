@@ -199,13 +199,13 @@ nav .cart-icon .cart-item-count {
 
 .cart-page .cart-header span {
     flex: 1;
-    background-color: rgb(142, 255, 142);
+    /* background-color: rgb(142, 255, 142); */
 }
 
 .cart-page .cart-header span:first-child {
     flex: 2;
     text-align: left;
-    background-color: red;
+    font-size: 20px;
 }
 
 .cart-page .cart-item {
@@ -219,7 +219,7 @@ nav .cart-icon .cart-item-count {
     display: flex;
     align-items: center;
     flex: 2;
-    background-color: red;
+    /* background-color: red; */
 }
 
 .cart-page .cart-item img {
@@ -228,7 +228,7 @@ nav .cart-icon .cart-item-count {
 }
 
 .cart-page .cart-item :is(.price, .quantity, .total-price) {
-       background-color: rgb(176, 176, 255);
+       /* background-color: rgb(176, 176, 255); */
     flex: 1.5;
     text-align: center;
 }

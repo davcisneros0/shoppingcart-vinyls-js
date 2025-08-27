@@ -4,6 +4,8 @@
 const productContainer = document.querySelector(".product-list");
 const isProductDetailPage = document.querySelector(".product-details");
 const isCartPage = document.querySelector(".cart-page");
+const isCheckoutPage = document.querySelector(".checkout-page");
+const checkoutPageDetails = document.querySelector(".checkout-page-shoppingcart-details");
 
 
 // IF USER IS IN PRODUCTS PAGE, SHOW PRODUCTS
@@ -15,6 +17,8 @@ if (productContainer) {
     displayProductDetails();
 } else if (isCartPage) {
     displayCart();
+} else if (isCheckoutPage) {
+    displayCheckout();
 }
 
 function displayProducts() {
@@ -163,6 +167,14 @@ function updateCartQuantity() {
             updateCartBadge();
         });
     });
+}
+
+
+function displayCheckout() {
+    const cart = JSON.parse(sessionStorage.getItem("cart")) || [];
+    console.log(cart);
+
+
 }
 
 
