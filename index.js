@@ -171,9 +171,28 @@ function updateCartQuantity() {
 
 
 function displayCheckout() {
+
+    const cartItemsContainer = document.querySelector(".checkout-page-cart-items");
+
     const cart = JSON.parse(sessionStorage.getItem("cart")) || [];
     console.log(cart);
 
+    cart.forEach((item) => {
+        //  const itemTotal = parseFloat(item.price.replace("$", "")) * item.quantity;
+        // subtotal += itemTotal;
+
+        const cartItem = document.createElement("div");
+        cartItem.classList.add("cart-item");
+        cartItem.innerHTML = `
+                <div class="product">
+                    <img src="${item.image}">
+                    <div class="item-detail">
+                        <p>${item.title}</p>
+                    </div>
+                </div>`
+
+          cartItemsContainer.appendChild(cartItem);
+    })
 
 }
 
