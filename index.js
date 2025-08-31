@@ -172,7 +172,41 @@ function updateCartQuantity() {
 
 function displayCheckout() {
 
-    const cartItemsContainer = document.querySelector(".checkout-page-cart-items");
+    const customerShippingDetailsFormContainer = document.getElementById('checkout-page-customer-details');
+
+    // Show customer shipping details form -- first form
+    showShippingDetailsForm();
+
+    function showShippingDetailsForm() {
+        customerShippingDetailsFormContainer.innerHTML = `
+        
+        <h3>Someone's Closet</h3>
+
+            <form>
+                
+                <div class="checkout-page-contact">
+                    <label for="email">Contact information</label>
+                    <input type="email" id="email" name="email" placeholder="Email" aria-required="true" required>
+                </div>
+            </form>
+
+        
+        
+        
+        
+        `
+    }
+    
+
+
+
+
+
+
+
+
+
+
 
     const cart = JSON.parse(sessionStorage.getItem("cart")) || [];
     console.log(cart);
