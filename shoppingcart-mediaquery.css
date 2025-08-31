@@ -12,4 +12,21 @@
         width: 400px;
         margin: 0 auto;
     }
+
+    /* form {
+        background-color: rgb(102, 102, 102);
+    } */
+
+    .checkout-page {
+    flex-direction: column-reverse;
+    }
+
+    #checkout-page-shoppingcart-details {
+        width: 100%;
+    }
+
+    #checkout-page-customer-details {
+        margin: 0 auto;
+        width: 90%;
+    }
 }

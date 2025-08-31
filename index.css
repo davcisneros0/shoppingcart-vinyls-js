@@ -484,7 +484,7 @@ nav .cart-icon .cart-item-count {
 
 .checkout-page h3 { 
     text-align: center;
-    margin: 25px 0;
+    margin: 50px 0;
     font-size: 2em;
 }
 
@@ -511,13 +511,14 @@ form input, select {
 }
 
 .checkout-page-contact {
-     padding: 0 30px;
-     margin-bottom: 35px;
+     padding: 0 70px;
+     margin: 0 auto 35px auto;
+     width: 95%;
 }
 
 .checkout-page-shipping {
     width: 95%;
-    padding: 0 60px;
+    padding: 0 70px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -527,6 +528,7 @@ form input, select {
 
 #checkout-page-shipping-header {
     margin-bottom: 15px;
+    font-size: 1.3em;
 }
 
 .checkout-page-shipping-row {
