@@ -189,7 +189,7 @@ function displayCheckout() {
                     <input type="email" id="email" name="email" placeholder="Email" aria-required="true" required>
                 </div>
 
-                 <div class="checkout-page-shipping">
+                <div class="checkout-page-shipping">
 
                     <span id="checkout-page-shipping-header">Shipping address</span>
 
@@ -270,7 +270,7 @@ function displayCheckout() {
 
                     <input type="tel" placeholder="Phone(optional)">
 
-                    <button type="submit" id="placeOrderBtn">Continue to Payment</button>
+                    <button type="submit" id="completeShippingBtn">Continue to Payment</button>
                 </div>
 
             </form>
@@ -280,24 +280,72 @@ function displayCheckout() {
         document.getElementById('shipping-form').addEventListener('submit', function(e) {
             e.preventDefault();
             if (validateShippingForm()) {
-                // showPaymentForm();
-                console.log('next page');
+                showPaymentForm();
             }
         });
     }
 
+function showPaymentForm() {
+
+    const customerShippingDetailsFormContainer = document.getElementById('checkout-page-customer-details');
+
+    customerShippingDetailsFormContainer.innerHTML = `
+
+
+        <form id="payment-form">
+            <h4 class="payment-form-header">Payment Information</h4>
+
+            <div class="payment-form-group">
+                <label for="cardNumber">Card Number</label>
+                <input type="text" id="cardNumber" name="cardNumber" required placeholder="1234 5678 9012 3456" maxlength="19">
+                <div class="card-icons">
+                    <span class="card-icon"><i class="fa-brands fa-cc-visa"></i></span>
+                    <span class="card-icon"><i class="fa-brands fa-cc-amex"></i></span>
+                    <span class="card-icon"><i class="fa-brands fa-cc-mastercard"></i></span>
+                </div>
+            </div>
+
+            <div class="checkout-page-payment-row">
+                <label for="cardName">Name on Card</label>
+                <input type="text" id="cardName" name="cardName" required>
+            </div>
+
+            <div class="checkout-page-payment-group">
+                <div class="checkout-page-payment-row">
+                    <label for="expirationDate">Expiration</label>
+                    <input type="text" id="expirationDate" name="expirationDate" required placeholder="MM/YY" maxlength="5">
+                </div>
+    
+                <div class="checkout-page-payment-row">
+                    <label for="cvv">CVV</label>
+                    <input type="text" id="cvv" name="cvv" required placeholder="123" maxlength="4">
+                </div>
+            </div>
+
+            <button type="submit" id="placeOrderBtn">Complete Order</button>
+
+        </form>
+    `;
+
+
+     // SUBMISSION FORM HANDLER
+    document.getElementById('payment-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            if (validatePaymentForm()) {
+                console.log('COMPLETED');
+            }
+        });
+}
 
 function validateShippingForm() {
     const form = document.getElementById('shipping-form');
     return form.checkValidity();
 }
 
-    // function showPaymentForm() {
-    //     customerShippingDetailsFormContainer.innerHTML = `
-        
-        
-    //     `;
-    // }
+function validatePaymentForm() {
+    const form = document.getElementById('payment-form');
+    return form.checkValidity();
+}
     
 
 

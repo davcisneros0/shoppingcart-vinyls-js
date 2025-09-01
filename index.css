@@ -543,6 +543,55 @@ form input, select {
     width: 40%;
 }
 
+#completeShippingBtn {
+    color: white;
+    background-color: black;
+    padding: 10px 0;
+    border-radius: 5px;
+    border: none;
+    margin-top: 9px;
+}
+
+#completeShippingBtn:hover {
+    background-color: rgb(37, 37, 37);
+    cursor: pointer;
+}
+
+.payment-form-header {
+    text-align: center;
+    font-size: 1.3em;
+}
+
+#payment-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 120px;
+    width: 95%;
+    padding: 0 70px;
+    gap: 15px;
+}
+
+.payment-form-group {
+    /* background-color: red; */
+    width: 100%;
+}
+
+.checkout-page-payment-row {
+    /* background-color: green; */
+    width: 100%;
+}
+
+.checkout-page-payment-group {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+}
+
+
 #placeOrderBtn {
     color: white;
     background-color: black;
@@ -550,6 +599,7 @@ form input, select {
     border-radius: 5px;
     border: none;
     margin-top: 9px;
+    width: 100%;
 }
 
 #placeOrderBtn:hover {
