@@ -174,6 +174,18 @@ function displayCheckout() {
 
     const customerShippingDetailsFormContainer = document.getElementById('checkout-page-customer-details');
 
+    // const customerShoppingCartContainer = document.getElementById('checkout-page-shoppingcart-details');
+    // let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
+    // console.log(cart);
+    
+    // cart.forEach((item) => {
+    //     customerShoppingCartContainer.innerHTML = `
+    //     <p>${item.title}</p>`;
+
+    //     customerShoppingCartContainer.appendChild(item);
+    // });
+
+
     // Show customer shipping details form -- first form
     showShippingDetailsForm();
 
@@ -268,7 +280,7 @@ function displayCheckout() {
                         <input type="text" placeholder="Zip code">
                     </div>
 
-                    <input type="tel" placeholder="Phone(optional)">
+                    <input type="tel" placeholder="Phone (optional)">
 
                     <button type="submit" id="completeShippingBtn">Continue to Payment</button>
                 </div>
@@ -285,7 +297,7 @@ function displayCheckout() {
         });
     }
 
-function showPaymentForm() {
+    function showPaymentForm() {
 
     const customerShippingDetailsFormContainer = document.getElementById('checkout-page-customer-details');
 
@@ -332,53 +344,47 @@ function showPaymentForm() {
     document.getElementById('payment-form').addEventListener('submit', function(e) {
             e.preventDefault();
             if (validatePaymentForm()) {
+                
                 console.log('COMPLETED');
             }
         });
-}
+    }
 
-function validateShippingForm() {
-    const form = document.getElementById('shipping-form');
-    return form.checkValidity();
-}
+    function validateShippingForm() {
+        const form = document.getElementById('shipping-form');
+        return form.checkValidity();
+    }
 
-function validatePaymentForm() {
-    const form = document.getElementById('payment-form');
-    return form.checkValidity();
-}
-    
+    function validatePaymentForm() {
+        const form = document.getElementById('payment-form');
+        return form.checkValidity();
+    }
 
+    const customerShoppingCartContainer = document.getElementById('checkout-page-shoppingcart-details');
 
-
-
-
-
-
-
-
-
-
-
-    const cart = JSON.parse(sessionStorage.getItem("cart")) || [];
+    let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
     console.log(cart);
+    
+    cart.forEach((item, index) => {
 
-    // cart.forEach((item) => {
-    //     //  const itemTotal = parseFloat(item.price.replace("$", "")) * item.quantity;
-    //     // subtotal += itemTotal;
+        const cartItem = document.createElement("div");
+        cartItem.classList.add("cart-item");
+        cartItem.innerHTML = `
+                <div class="product">
+                    <img src="${item.image}">
+                    <div class="item-detail">
+                        <p>${item.title}</p>
+                    </div>
+                </div>
 
-    //     const cartItem = document.createElement("div");
-    //     cartItem.classList.add("cart-item");
-    //     cartItem.innerHTML = `
-    //             <div class="product">
-    //                 <img src="${item.image}">
-    //                 <div class="item-detail">
-    //                     <p>${item.title}</p>
-    //                 </div>
-    //             </div>`
+                <span class="price">${item.price}</span>
+                <div class="quantity"><input type="number" value="${item.quantity}" min="1" data-index="${index}"></div>
+                <button class="remove" data-index="${index}"><i class="fa-solid fa-xmark"></i></button>
+        `;
 
-    //       cartItemsContainer.appendChild(cartItem);
-    // })
-
+        customerShoppingCartContainer.appendChild(cartItem);
+    });
+    
 }
 
 
