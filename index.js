@@ -197,7 +197,7 @@ function displayCheckout() {
             <form id="shipping-form">
                 
                 <div class="checkout-page-contact">
-                    <label for="email">Contact information</label>
+                    <label for="email">Contact</label>
                     <input type="email" id="email" name="email" placeholder="Email" aria-required="true" required>
                 </div>
 
@@ -298,8 +298,6 @@ function displayCheckout() {
     }
 
     function showPaymentForm() {
-
-    // const customerShippingDetailsFormContainer = document.getElementById('checkout-page-customer-details');
 
     customerShippingDetailsFormContainer.innerHTML = `
 
