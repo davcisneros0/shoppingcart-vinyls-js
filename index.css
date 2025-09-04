@@ -610,3 +610,36 @@ form input, select {
     background-color: rgb(37, 37, 37);
     cursor: pointer;
 }
+
+.checkout-page-cart-items {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 0 70px;
+    margin: 20px auto 0 auto;
+    width: 100%;
+}
+
+.checkout-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px 0;
+    width: 100%;
+    /* background-color: red; */
+
+}
+
+.checkout-item img {
+    width: 80px;
+}
+
+.checkout-product-detail {
+    margin: 0 45px 0 10px;
+}
+
+.checkout-price {
+    margin-right: 45px;
+}

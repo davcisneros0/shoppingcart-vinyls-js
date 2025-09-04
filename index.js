@@ -299,7 +299,7 @@ function displayCheckout() {
 
     function showPaymentForm() {
 
-    const customerShippingDetailsFormContainer = document.getElementById('checkout-page-customer-details');
+    // const customerShippingDetailsFormContainer = document.getElementById('checkout-page-customer-details');
 
     customerShippingDetailsFormContainer.innerHTML = `
 
@@ -360,7 +360,9 @@ function displayCheckout() {
         return form.checkValidity();
     }
 
+    // SHOW ITEMS FROM SHOPPING CART TO CHECKOUT PAGE
     const customerShoppingCartContainer = document.getElementById('checkout-page-shoppingcart-details');
+    const customerShoppingCartItemContainer = document.querySelector('.checkout-page-cart-items');
 
     let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
     console.log(cart);
@@ -368,21 +370,20 @@ function displayCheckout() {
     cart.forEach((item, index) => {
 
         const cartItem = document.createElement("div");
-        cartItem.classList.add("cart-item");
+        cartItem.classList.add("checkout-item");
         cartItem.innerHTML = `
-                <div class="product">
+        
                     <img src="${item.image}">
-                    <div class="item-detail">
+                    <div class="checkout-product-detail">
                         <p>${item.title}</p>
                     </div>
-                </div>
+           
 
-                <span class="price">${item.price}</span>
-                <div class="quantity"><input type="number" value="${item.quantity}" min="1" data-index="${index}"></div>
-                <button class="remove" data-index="${index}"><i class="fa-solid fa-xmark"></i></button>
+                <span class="checkout-price">${item.price}</span>
+                <div class="quantity"><p>QTY: ${item.quantity}</p></div>
         `;
 
-        customerShoppingCartContainer.appendChild(cartItem);
+        customerShoppingCartItemContainer.appendChild(cartItem);
     });
     
 }
