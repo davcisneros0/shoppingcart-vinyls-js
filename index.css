@@ -619,6 +619,8 @@ form input, select {
     padding: 0 70px;
     margin: 20px auto 0 auto;
     width: 100%;
+    font-size: 0.9em;
+    color: rgb(30, 30, 30);
 }
 
 .checkout-item {
@@ -628,8 +630,7 @@ form input, select {
     justify-content: flex-start;
     padding: 10px 0;
     width: 100%;
-    /* background-color: red; */
-
+    border-bottom: 1px solid #ccc;
 }
 
 .checkout-item img {
@@ -642,4 +643,29 @@ form input, select {
 
 .checkout-price {
     margin-right: 45px;
+}
+
+.checkout-page-gift-discount-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 25px 0;
+}
+
+.checkout-page-gift-discount-section input {
+    width: 60%;
+    border-radius: 5px;
+    border: 1px solid rgb(216, 216, 216);
+    padding: 15px 10px;
+}
+
+.checkout-page-gift-discount-section button {
+    border-radius: 5px;
+    border: 1px solid rgb(216, 216, 216);
+    padding: 15px 10px;
+    margin-left: 10px;
+    background-color: black;
+    color: white;
 }
