@@ -29,4 +29,9 @@
         margin: 0 auto;
         width: 90%;
     }
+
+    footer {
+    flex-direction: column;
+    gap: 20px;
+    }
 }

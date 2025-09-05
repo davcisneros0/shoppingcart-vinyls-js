@@ -180,14 +180,26 @@ h1 {
     width: 100%;
 }
 
-/* .product-details .product-policy {
-    border-top: 1px solid #ccc;
-    padding-top: 8px;
-} */
+footer {
+    background: #171717;
+    min-height: 25vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    color: white;
+}
 
-/* .product-details .product-policy p {
-    margin: 3px 0;
-} */
+footer .footer-section {
+    text-align: center;
+    width: 100%;
+    font-size: 1.05em;
+    margin: 15px 0;
+}
+
+footer .footer-section p {
+    margin: 5px 0;
+}
 
 .cart-page {
     padding: 110px 9% 30px;
