@@ -135,12 +135,10 @@ h1 {
     grid-template-columns: repeat(2, 1fr);
     gap: 40px;
     padding: 130px 10% 30px;
+    min-height: 100vh;
 }
 
 .product-details .product-img {
-    /* display: grid;
-    grid-template-columns: 1fr; */
-    /* gap: 13px; */
     height: 450px;
 }
 
