@@ -199,8 +199,14 @@ footer .footer-section p {
     margin: 5px 0;
 }
 
+.product-info .title {
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
 .cart-page {
     padding: 110px 9% 30px;
+    min-height: 100vh;
 }
 
 .cart-page .cart-header {
@@ -299,12 +305,27 @@ footer .footer-section p {
     border-radius: 8px;
     border: none;
     cursor: pointer;
-}
-
-.cart-total .checkout-btn a {
-    color: white;
+    text-align: center;
     text-decoration: none;
 }
+
+/* .cart-total .checkout-btn {
+    display: block;
+    padding: 12px 30px;
+    margin: 30px 0 0 auto;
+    border-radius: 8px;
+    border: none;
+    text-align: right;
+} */
+
+/* .cart-total .checkout-btn:disabled {
+    background-color: rgba(0, 0, 0, 0.253);
+} */
+
+/* .cart-total .checkout-btn a {
+    text-decoration: none;
+} */
+
 .section-title {
     font-size: 2em;
     text-align: center;
