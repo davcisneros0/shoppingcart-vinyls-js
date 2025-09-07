@@ -12,11 +12,6 @@
         width: 400px;
         margin: 0 auto;
     }
-
-    /* form {
-        background-color: rgb(102, 102, 102);
-    } */
-
     .checkout-page {
     flex-direction: column-reverse;
     }
@@ -33,5 +28,17 @@
     footer {
     flex-direction: column;
     gap: 20px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+
+    .cart-item {
+        font-size: 0.8em;
+    }
+
+    .cart-page .cart-total {
+        width: 100%;
+        margin: 50px 0 0 0;
     }
 }
