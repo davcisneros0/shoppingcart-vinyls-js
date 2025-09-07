@@ -12,9 +12,15 @@
         width: 400px;
         margin: 0 auto;
     }
+    
     .checkout-page {
     flex-direction: column-reverse;
     }
+
+    #checkout-page-shoppingcart-details {
+        padding: 30px 0;
+    }
+
 
     #checkout-page-shoppingcart-details {
         width: 100%;
@@ -23,6 +29,11 @@
     #checkout-page-customer-details {
         margin: 0 auto;
         width: 90%;
+    }
+
+    #payment-form {
+        margin-top: 30px;
+        padding-bottom: 30px;
     }
 
     footer {
@@ -41,4 +52,14 @@
         width: 100%;
         margin: 50px 0 0 0;
     }
+
+    .checkout-page-contact {
+        padding: 0 20px;
+    }
+
+    .checkout-page-shipping {
+        padding: 0 20px 20px 0;
+        
+    }
+
 }
