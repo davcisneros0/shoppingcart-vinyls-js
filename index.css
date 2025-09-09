@@ -705,7 +705,7 @@ form input, select {
 
 #create-account-page {
     /* background-color: red; */
-    padding: 90px 9% 30px;
+    padding: 90px 10% 30px;
 }
 
 #create-account-page-header {
@@ -719,4 +719,32 @@ form input, select {
 
 hr {
     margin-bottom: 15px;
+}
+
+#create-account-page-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+#create-account-page-form h4 {
+    margin: 5px 0;
+}
+
+#create-account-page-form span {
+    margin: 0 0 20px 0;
+}
+
+#create-account-page-form label {
+    margin: 18px 0 1px 0;
+}
+
+#create-account-page-form .submit {
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    width: 80%;
+    margin: 10px auto 0 auto;
 }
