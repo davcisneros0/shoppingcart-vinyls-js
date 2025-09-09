@@ -309,23 +309,6 @@ footer .footer-section p {
     text-decoration: none;
 }
 
-/* .cart-total .checkout-btn {
-    display: block;
-    padding: 12px 30px;
-    margin: 30px 0 0 auto;
-    border-radius: 8px;
-    border: none;
-    text-align: right;
-} */
-
-/* .cart-total .checkout-btn:disabled {
-    background-color: rgba(0, 0, 0, 0.253);
-} */
-
-/* .cart-total .checkout-btn a {
-    text-decoration: none;
-} */
-
 .section-title {
     font-size: 2em;
     text-align: center;
@@ -716,4 +699,24 @@ form input, select {
     display: flex;
     justify-content: space-between;
     width: 100%;
+}
+
+/* CREATE AN ACCOUNT PAGE AND LOGIN PAGE */
+
+#create-account-page {
+    /* background-color: red; */
+    padding: 90px 9% 30px;
+}
+
+#create-account-page-header {
+    margin: 20px 0;
+}
+
+#create-account-page-header h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+hr {
+    margin-bottom: 15px;
 }

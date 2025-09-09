@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Someone's Closet - Create an Account</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="shoppingcart-mediaquery.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Dirt&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">Someone's Closet</a>
+        <nav>
+            <a href="cart.html" class="cart-icon">
+                  <i class="fa-solid fa-cart-shopping"></i>
+                <span class="cart-item-count"> 
+                    <!-- <i class="fa-solid fa-cart-shopping"></i> -->
+                </span>
+            </a>
+        </nav>
+
+    </header>
+
+
+    <section id="create-account-page">
+       
+        <div id="create-account-page-header">
+             <h3>Create an account</h3>
+            <p>After registration is completed, a registration confirmation email will be sent to the email address you entered. 
+            (Please check your e-mail reception settings before registering.)
+            </p>
+        </div>
+
+        <hr>
+        
+
+        <form id="create-account-page-form">
+            <h4>Profile details</h4>
+            <span>Required *</span>
+
+            <label for="email">Email address * </label>
+            <input type="email" name="email" placeholder="xxx@someonescloset.com" maxlength="64" 
+            pattern="^((?:[A-Za-z0-9!#$%&amp;'*+\-\/=?^_`\{\|\}~]|(?&lt;=^|\.)&quot;|&quot;(?=$|\.|@)|(?&lt;=&quot;.*)[ .](?=.*&quot;)|(?&lt;!\.)\.){1,64})(@)((?:[A-Za-z0-9.\-])*(?:[A-Za-z0-9])\.(?:[A-Za-z0-9]){2,})$" 
+            required>
+
+            <label for="emailConfirm">Re-Enter Your Email Address * </label>
+            <input type="email" name="emailConfirm" placeholder="xxx@someonescloset.com" maxlength="64" 
+            pattern="^((?:[A-Za-z0-9!#$%&amp;'*+\-\/=?^_`\{\|\}~]|(?&lt;=^|\.)&quot;|&quot;(?=$|\.|@)|(?&lt;=&quot;.*)[ .](?=.*&quot;)|(?&lt;!\.)\.){1,64})(@)((?:[A-Za-z0-9.\-])*(?:[A-Za-z0-9])\.(?:[A-Za-z0-9]){2,})$" 
+            required>
+
+            <label for="password">Password * </label>
+            <input type="password" name="password" minlength="8" maxlength="20" showpassword="false" required>
+
+            <label for="birthday">Birthday</label>
+            <input type="tel" name="birthday" minlength="10" maxlength="10" placeholder="MM/DD/YYYY">
+        </form>
+
+    </section>
+
+
+    <script src="products.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
