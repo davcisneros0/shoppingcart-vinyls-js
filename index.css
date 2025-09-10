@@ -704,7 +704,6 @@ form input, select {
 /* CREATE AN ACCOUNT PAGE AND LOGIN PAGE */
 
 #create-account-page {
-    /* background-color: red; */
     padding: 90px 10% 30px;
 }
 
@@ -747,4 +746,70 @@ hr {
     color: white;
     width: 80%;
     margin: 10px auto 0 auto;
+}
+
+#login-account-page {
+    padding: 90px 10% 30px;
+}
+
+#login-account-page-header {
+    margin: 20px 0;
+}
+
+#login-account-page-header h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+#login-account-page-section {
+    /* background-color: red; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 4em;
+    padding: 0 50px;
+    margin-top: 30px;
+}
+
+#login-account-page-form {
+    width: 40%;
+}
+
+#login-account-page-form label {
+    margin-top: 18px;
+}
+
+#login-account-page-form button {
+    background-color: black;
+    color: white;
+    margin-top: 15px;
+    width: 40%;
+    border-radius: 8px;
+    padding: 11px;
+    border: none;
+    cursor: pointer;
+}
+
+#login-account-page-form button:hover {
+    background-color: rgb(44, 44, 44);
+}
+
+#login-account-page-createaccount {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 40%;
+}
+
+#login-account-page-createaccount button {
+     background-color: black;
+    color: white;
+    margin-top: 15px;
+    width: 40%;
+    border-radius: 8px;
+    padding: 11px;
+    border: none;
+    cursor: pointer;
 }
