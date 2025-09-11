@@ -21,6 +21,9 @@
         padding: 30px 0;
     }
 
+    .checkout-item {
+    justify-content: center;
+    }
 
     #checkout-page-shoppingcart-details {
         width: 100%;
